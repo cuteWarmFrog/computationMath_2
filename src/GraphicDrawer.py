@@ -8,8 +8,14 @@ def defaultX(x):
 
 def drawGraphic(func1, func2=defaultX):
     plt.title("График")
-    x = np.linspace(-2, 3, 100, True)
+    x = np.linspace(-5, 5, 100, True)
     plt.plot(x, func1(x))
     plt.plot(x, func2(x))
+
+    if func2 != defaultX:
+        plt.plot(x, defaultX(x))
+
+    plt.ylim([-5, 10])
+    plt.grid()
     plt.show()
     plt.close('all')
